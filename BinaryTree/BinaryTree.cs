@@ -31,7 +31,7 @@ namespace BinaryTree
         /// </summary>
         public int Count { get; private set; }
         public Node<T> Root { get; private set; }
-        public Comparer<T> ComparerT { get; private set; }
+        public IComparer<T> ComparerT { get; private set; }
         #endregion
 
         #region Constructors
@@ -56,7 +56,7 @@ namespace BinaryTree
         /// <param name="comparer"><see cref="IComparer<T>"/></param>
         public BinaryTree(IComparer<T> comparer)
         {
-            ComparerT = (Comparer<T>)comparer;
+             ComparerT = comparer;
         }
         #endregion
 
@@ -298,7 +298,6 @@ namespace BinaryTree
                     traverseDelegate = TraversePreOrder;
                     break;
                 case TraverseType.PostOrder:
-
                     traverseDelegate = TraversePostOrder;
                     break;
             }

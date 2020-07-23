@@ -505,26 +505,26 @@ namespace BinaryTree.Tests
             #endregion
 
 			// UNCOMMENT TO CHECK ADVANCED PART
-            // #region Advanced
-            // ,
-            // new object[]
-            // {
-                // typeof(UncomparableClass),
-                // new UncomparableClass[]
-                // {
-                    // new UncomparableClass{ Value = 100 },
-                    // new UncomparableClass{ Value = 60 },
-                    // new UncomparableClass{ Value = 400 },
-                    // new UncomparableClass{ Value = 10 },
-                    // new UncomparableClass{ Value = 90 }
-                // },
-                // new UncomparableClass{ Value = 20 },
-                // new UncomparableClassComparer(),
-                // new int[] { 0, 1, 3, 4, 2 },
-                // new int[] { 3, 1, 4, 0, 2 },
-                // new int[] { 3, 4, 1, 2, 0 }
-            // }
-            // #endregion
+             #region Advanced
+             ,
+             new object[]
+             {
+                 typeof(UncomparableClass),
+                 new UncomparableClass[]
+                 {
+                     new UncomparableClass{ Value = 100 },
+                     new UncomparableClass{ Value = 60 },
+                     new UncomparableClass{ Value = 400 },
+                     new UncomparableClass{ Value = 10 },
+                     new UncomparableClass{ Value = 90 }
+                 },
+                 new UncomparableClass{ Value = 20 },
+                 new UncomparableClassComparer(),
+                 new int[] { 0, 1, 3, 4, 2 },
+                 new int[] { 3, 1, 4, 0, 2 },
+                 new int[] { 3, 4, 1, 2, 0 }
+             }
+             #endregion
 
         };
     }
