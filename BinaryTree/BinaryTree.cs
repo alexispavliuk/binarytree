@@ -121,7 +121,7 @@ namespace BinaryTree
         {
             Node<T> current = Root;
             Node<T> father = null;
-            while(current != null)
+            while (current != null)
             {
                 if (ComparerT.Compare(current.Data, item) < 0)
                 {
@@ -136,7 +136,9 @@ namespace BinaryTree
                 else break;
             }
             if (current == null)
+            {
                 return false;
+            } 
 
             Count--;
 
@@ -148,8 +150,13 @@ namespace BinaryTree
                     Root = null;
                 // comparing what node of children should we use for replacing
                 else if (ComparerT.Compare(father.Data, current.Data) > 0)
+                {
                     father.Left = null;
-                else father.Right = null;
+                }
+                else
+                {
+                    father.Right = null;
+                }
             }
             //checking if node has only left child
             else if (current.Right == null)
@@ -157,7 +164,10 @@ namespace BinaryTree
                 // checking if node to delete is root
                 if (father == null)
                     Root = current.Left;
-                else father.Left = current.Left;
+                else
+                {
+                    father.Left = current.Left;
+                }
             }
             //checking if node has only right child
             else if (current.Left == null)
@@ -165,7 +175,10 @@ namespace BinaryTree
                 // checking if node to delete is root
                 if (father == null)
                     Root = current.Right;
-                else father.Left = current.Right;
+                else
+                {
+                    father.Left = current.Right;
+                }
             }
             // if node has both left and right
             // we should replace node with the smallest node of right sub-tree 
@@ -181,7 +194,7 @@ namespace BinaryTree
                 {
                     while (tmp.Left.Left != null)
                         tmp = tmp.Left;
-                    // one temporary node, we need it for saving node to replace
+                    // one more temporary node, we need it for saving node to replace
                     Node<T> tmp2 = tmp.Left;
                     // deleting node from this place
                     tmp.Left = null;
@@ -190,10 +203,15 @@ namespace BinaryTree
                     tmp = tmp2;
                 }
                 if (father == null)
+                {
                     Root = tmp;
+                }
                 else if (ComparerT.Compare(father.Data, current.Data) > 0)
                     father.Left = tmp;
-                else father.Right = tmp;
+                else
+                {
+                    father.Right = tmp;
+                } 
             }
             TreeEventArgs<T> args = new TreeEventArgs<T>(item, $"Element {item} was removed from tree");
             ElementRemoved?.Invoke(this, args);
